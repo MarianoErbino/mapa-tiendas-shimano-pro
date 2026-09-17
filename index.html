@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiendas Shimano PRO - Relanzamiento 2026</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin="">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+<style>
+  :root {
+    --brand: #0033a0;
+    --brand-2: #e30613;
+    --panel-bg: #ffffff;
+    --panel-border: #e0e0e0;
+    --text: #222;
+    --muted: #666;
+  }
+  html, body { height: 100%; margin: 0; padding: 0; font-family: "Segoe UI", Arial, sans-serif; color: var(--text); }
+  #map { position: absolute; top: 0; left: 380px; right: 0; bottom: 0; }
+
+  #sidebar {
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 380px;
+    background: var(--panel-bg);
+    border-right: 1px solid var(--panel-border);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 6px rgba(0,0,0,0.08);
+    z-index: 1000;
+  }
+  .sb-header {
+    padding: 14px 16px 10px;
+    border-bottom: 1px solid var(--panel-border);
+    background: linear-gradient(135deg, var(--brand) 0%, #0044c9 100%);
+    color: #fff;
+  }
+  .sb-header h1 { margin: 0 0 4px; font-size: 16px; font-weight: 700; letter-spacing: 0.2px; }
+  .sb-header p  { margin: 0; font-size: 11px; opacity: 0.9; }
+  .sb-filters { padding: 10px 12px; border-bottom: 1px solid var(--panel-border); background: #fafafa; }
+  .sb-filters .row { display: flex; gap: 6px; margin-bottom: 6px; }
+  .sb-filters .row:last-child { margin-bottom: 0; }
+  .sb-filters select, .sb-filters input {
+    flex: 1; padding: 6px 8px; font-size: 12px;
+    border: 1px solid #ccc; border-radius: 4px;
+    font-family: inherit;
+  }
+  .sb-filters button {
+    padding: 6px 10px; font-size: 12px; cursor: pointer;
+    border: 1px solid var(--brand); background: var(--brand); color: #fff;
+    border-radius: 4px; font-family: inherit;
+  }
+  .sb-filters button:hover { background: #0044c9; }
+  .sb-counter { font-size: 11px; color: var(--muted); padding: 6px 12px 0; }
+
+  .sb-list { flex: 1; overflow-y: auto; }
+  .store-item {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .store-item:hover { background: #f6f9ff; }
+  .store-item.active { background: #eef3ff; border-left: 3px solid var(--brand); padding-left: 9px; }
+  .store-item .name { font-weight: 600; color: var(--text); }
+  .store-item .loc  { color: var(--muted); font-size: 11px; }
+  .store-item .contact { margin-top: 2px; color: #444; font-size: 11px; }
+  .store-item .qbadge {
+    display: inline-block; padding: 1px 5px; margin-left: 4px;
+    font-size: 9px; border-radius: 3px; vertical-align: middle;
+  }
+  .qbadge.dept { background: #dff5e1; color: #1b6e1f; }
+  .qbadge.prov { background: #fff2cd; color: #7a5c00; }
+  .qbadge.caba { background: #dfe8ff; color: #0033a0; }
+
+  .leaflet-popup-content-wrapper { border-radius: 6px; }
+  .leaflet-popup-content { font-family: "Segoe UI", Arial, sans-serif; font-size: 12px; margin: 10px 12px; min-width: 210px; }
+  .popup h3 { margin: 0 0 4px; font-size: 13px; color: var(--brand); }
+  .popup .prov { color: var(--muted); font-size: 11px; margin-bottom: 6px; }
+  .popup .row { margin: 3px 0; }
+  .popup .row .lbl { font-weight: 600; color: #333; }
+  .popup .actions { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .popup .actions button, .popup .actions a {
+    font-size: 11px; padding: 4px 8px;
+    background: var(--brand); color: #fff; border: none; border-radius: 3px;
+    cursor: pointer; text-decoration: none; font-family: inherit;
+  }
+  .popup .actions .wa { background: #25d366; }
+  .popup .actions button:hover, .popup .actions a:hover { opacity: 0.9; }
+
+  #toast {
+    position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
+    background: #222; color: #fff; padding: 8px 14px; border-radius: 4px;
+    font-size: 12px; z-index: 2000; opacity: 0; transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  #toast.show { opacity: 1; }
+
+  @media (max-width: 720px) {
+    #sidebar { width: 100%; height: 55%; bottom: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.08); border-right: none; border-bottom: 1px solid var(--panel-border); }
+    #map { left: 0; top: 55%; }
+  }
+</style>
+</head>
+<body>
+
+<aside id="sidebar">
+  <div class="sb-header">
+    <h1>Tiendas Shimano PRO</h1>
+    <p>Relanzamiento 2026 - Filtra por provincia o busca por nombre/localidad</p>
+  </div>
+
+  <div class="sb-filters">
+    <div class="row">
+      <select id="fprov"><option value="">Todas las provincias</option></select>
+    </div>
+    <div class="row">
+      <input id="fsearch" type="text" placeholder="Buscar nombre, localidad, IG...">
+      <button id="fclear" title="Limpiar filtros">X</button>
+    </div>
+    <div class="sb-counter" id="counter">-</div>
+  </div>
+
+  <div class="sb-list" id="list"></div>
+</aside>
+
+<div id="map"></div>
+<div id="toast"></div>
+
+<script>
+/* ---------- Config mapa Argentina ---------- */
+const MAP_BOUNDS = [[-22, -76], [-56, -52]];
+const MAP_CENTER = [-38, -64];
+const MAP_ZOOM   = 5;
+
+const map = L.map('map', {
+  preferCanvas: true,
+  zoomControl: true,
+  minZoom: 4,
+  maxZoom: 14,
+  maxBounds: MAP_BOUNDS,
+  maxBoundsViscosity: 0.7,
+}).setView(MAP_CENTER, MAP_ZOOM);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  subdomains: 'abc',
+  maxZoom: 19,
+  updateWhenZooming: false,
+  updateWhenIdle: true,
+  keepBuffer: 4,
+}).addTo(map);
+
+/* ---------- Provincias (contorno) ---------- */
+const styleProv = { color: '#1f4e79', weight: 1, fillColor: '#1f4e79', fillOpacity: 0.04 };
+const styleProvHover = { weight: 2, color: '#e53935', fillOpacity: 0.15 };
+
+let provLayer = null;
+
+fetch('../MAPA-ARGENTINA/geo.json')
+  .then(r => r.ok ? r.json() : Promise.reject('missing'))
+  .catch(() => fetch('./geo.json').then(r => r.json()))
+  .then(geo => {
+    provLayer = L.geoJSON(geo.prov, {
+      style: styleProv,
+      onEachFeature: (feature, layer) => {
+        layer.bindTooltip(feature.properties.name, { sticky: true });
+        layer.on({
+          mouseover: (e) => { e.target.setStyle(styleProvHover); },
+          mouseout:  (e) => provLayer.resetStyle(e.target),
+          click:     (e) => {
+            const name = feature.properties.name;
+            const sel = document.getElementById('fprov');
+            const opt = Array.from(sel.options).find(o => o.value === name);
+            if (opt) { sel.value = name; renderList(); }
+            map.fitBounds(e.target.getBounds(), { padding: [20, 20] });
+          },
+        });
+      },
+    }).addTo(map);
+    provLayer.bringToBack();
+  })
+  .catch(err => {
+    console.warn('No se cargo geo.json (contorno provincias):', err);
+  });
+
+/* ---------- Stores + markers ---------- */
+const cluster = L.markerClusterGroup({
+  showCoverageOnHover: false,
+  maxClusterRadius: 45,
+  spiderfyOnMaxZoom: true,
+});
+map.addLayer(cluster);
+
+let STORES = [];
+
+function fullName(s) {
+  return [s.nombre, s.apellido].filter(Boolean).join(' ').trim() || '(sin nombre)';
+}
+
+function jitter(lat, lng, i) {
+  const step = 0.02;
+  const angle = (i * 137.5) * Math.PI / 180;
+  const radius = step * Math.sqrt(i);
+  return [lat + Math.sin(angle) * radius, lng + Math.cos(angle) * radius];
+}
+
+function waLink(tel) {
+  if (!tel) return null;
+  let digits = String(tel).replace(/\D/g, '');
+  if (!digits) return null;
+  if (digits.startsWith('0')) digits = digits.slice(1);
+  if (!digits.startsWith('54')) digits = '54' + digits;
+  return 'https://wa.me/' + digits;
+}
+
+function igLink(handle) {
+  if (!handle) return null;
+  let h = String(handle).trim().replace(/^@/, '');
+  if (!h || /\s/.test(h)) return null;
+  return 'https://instagram.com/' + encodeURIComponent(h);
+}
+
+function contactAsText(s) {
+  const lines = [];
+  lines.push(fullName(s));
+  const loc = [s.localidad, s.provincia].filter(Boolean).join(', ');
+  if (loc) lines.push('Localidad: ' + loc);
+  if (s.telefono) lines.push('Tel: ' + s.telefono);
+  if (s.instagram) lines.push('IG: ' + s.instagram);
+  if (s.correo) lines.push('Mail: ' + s.correo);
+  return lines.join('\n');
+}
+
+function showToast(msg, ms = 1800) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(showToast._to);
+  showToast._to = setTimeout(() => t.classList.remove('show'), ms);
+}
+
+function copyText(txt) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(txt).then(() => showToast('Copiado al portapapeles'));
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = txt; document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); showToast('Copiado al portapapeles'); }
+    catch (e) { showToast('No se pudo copiar'); }
+    finally { document.body.removeChild(ta); }
+  }
+}
+
+/* ---- DOM-safe builders (no innerHTML) ---- */
+function el(tag, cls, text) {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text != null) n.textContent = text;
+  return n;
+}
+
+function addRow(parent, label, value) {
+  if (!value) return;
+  const div = el('div', 'row');
+  const lbl = el('span', 'lbl', label + ' ');
+  div.appendChild(lbl);
+  div.appendChild(document.createTextNode(value));
+  parent.appendChild(div);
+}
+
+function buildPopupNode(s) {
+  const wrap = el('div', 'popup');
+  wrap.appendChild(el('h3', null, fullName(s)));
+  const loc = [s.localidad, s.provincia].filter(Boolean).join(', ');
+  if (loc) wrap.appendChild(el('div', 'prov', loc));
+
+  addRow(wrap, 'Tel:', s.telefono);
+  addRow(wrap, 'IG:', s.instagram);
+  addRow(wrap, 'Mail:', s.correo);
+
+  const actions = el('div', 'actions');
+  const wa = waLink(s.telefono);
+  if (wa) {
+    const a = document.createElement('a');
+    a.className = 'wa'; a.target = '_blank'; a.rel = 'noopener'; a.href = wa;
+    a.textContent = 'WhatsApp';
+    actions.appendChild(a);
+  }
+  const igU = igLink(s.instagram);
+  if (igU) {
+    const a = document.createElement('a');
+    a.target = '_blank'; a.rel = 'noopener'; a.href = igU;
+    a.textContent = 'Ver IG';
+    actions.appendChild(a);
+  }
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.textContent = 'Copiar contacto';
+  btn.addEventListener('click', () => copyText(contactAsText(s)));
+  actions.appendChild(btn);
+  wrap.appendChild(actions);
+  return wrap;
+}
+
+function buildStoreItem(s, idx, marker) {
+  const item = el('div', 'store-item');
+  item.dataset.idx = idx;
+
+  const nameDiv = el('div', 'name');
+  nameDiv.appendChild(document.createTextNode(fullName(s)));
+  const badgeCls = 'qbadge ' + s.match_quality;
+  const badgeLbl = s.match_quality === 'dept' ? 'depto'
+                  : s.match_quality === 'caba' ? 'CABA' : 'aprox';
+  nameDiv.appendChild(el('span', badgeCls, badgeLbl));
+  item.appendChild(nameDiv);
+
+  const locStr = [s.localidad, s.provincia].filter(Boolean).join(' - ');
+  if (locStr) item.appendChild(el('div', 'loc', locStr));
+
+  const contact = [s.telefono, s.instagram].filter(Boolean).join(' - ');
+  if (contact) item.appendChild(el('div', 'contact', contact));
+
+  item.addEventListener('click', () => {
+    map.setView([s.lat, s.lng], Math.max(map.getZoom(), 9), { animate: true });
+    setTimeout(() => marker.openPopup(), 250);
+    document.querySelectorAll('.store-item.active').forEach(x => x.classList.remove('active'));
+    item.classList.add('active');
+  });
+  return item;
+}
+
+function renderList() {
+  const provSel = document.getElementById('fprov').value.toLowerCase();
+  const q = document.getElementById('fsearch').value.trim().toLowerCase();
+  const list = document.getElementById('list');
+  list.replaceChildren();
+  cluster.clearLayers();
+
+  let shown = 0;
+  const buckets = new Map();
+
+  STORES.forEach((s, i) => {
+    if (provSel && s.provincia.toLowerCase() !== provSel) return;
+    if (q) {
+      const hay = [s.nombre, s.apellido, s.localidad, s.localidad_raw, s.provincia, s.instagram, s.correo, s.telefono]
+        .map(x => String(x || '').toLowerCase()).join(' | ');
+      if (!hay.includes(q)) return;
+    }
+    shown++;
+
+    const key = s.provincia + '|' + (s.departamento || s.localidad);
+    const n = buckets.get(key) || 0;
+    buckets.set(key, n + 1);
+    const [lat, lng] = jitter(s.lat, s.lng, n);
+
+    const marker = L.marker([lat, lng], { title: fullName(s) });
+    marker.bindPopup(() => buildPopupNode(s));
+    cluster.addLayer(marker);
+
+    list.appendChild(buildStoreItem(s, i, marker));
+  });
+
+  const totalMsg = shown === STORES.length
+    ? shown + ' tiendas'
+    : shown + ' de ' + STORES.length + ' tiendas';
+  document.getElementById('counter').textContent = totalMsg;
+}
+
+/* ---------- Init ---------- */
+fetch('./stores.json')
+  .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+  .then(data => {
+    STORES = data;
+    const provSet = new Set(STORES.map(s => s.provincia).filter(Boolean));
+    const provs = Array.from(provSet).sort((a, b) => a.localeCompare(b, 'es'));
+    const sel = document.getElementById('fprov');
+    provs.forEach(p => {
+      const opt = document.createElement('option');
+      opt.value = p;
+      const count = STORES.filter(s => s.provincia === p).length;
+      opt.textContent = p + ' (' + count + ')';
+      sel.appendChild(opt);
+    });
+
+    sel.addEventListener('change', renderList);
+    document.getElementById('fsearch').addEventListener('input', renderList);
+    document.getElementById('fclear').addEventListener('click', () => {
+      sel.value = '';
+      document.getElementById('fsearch').value = '';
+      renderList();
+      map.setView(MAP_CENTER, MAP_ZOOM);
+    });
+
+    renderList();
+  })
+  .catch(err => {
+    console.error('Error cargando stores.json:', err);
+    const counter = document.getElementById('counter');
+    counter.textContent = 'Error: ' + err.message;
+    const list = document.getElementById('list');
+    list.replaceChildren();
+    const box = el('div', null);
+    box.style.cssText = 'padding:14px;color:#c00;font-size:12px;line-height:1.5;';
+    box.appendChild(document.createTextNode('No se pudo cargar stores.json. Servir por HTTP (no file://).'));
+    box.appendChild(document.createElement('br'));
+    box.appendChild(document.createTextNode('Ejemplo: python -m http.server 8000'));
+    list.appendChild(box);
+  });
+</script>
+</body>
+</html>
