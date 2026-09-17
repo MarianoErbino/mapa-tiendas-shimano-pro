@@ -505,11 +505,11 @@
   "provincia": "Buenos Aires",
   "localidad_raw": "Punta alta",
   "localidad": "Punta alta",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.571,
-  "lat": -36.674463782537195,
-  "lng": -60.5581519606063
+  "departamento": "Coronel De Marina Leonardo Rosales",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -38.84964641636202,
+  "lng": -61.83573543091083
  },
  {
   "nombre": "Pablo",
@@ -918,14 +918,14 @@
   "correo": "arielalvarocruz@gmail.com",
   "instagram": "@Arieltazo",
   "provincia_raw": "Buenos Aires",
-  "provincia": "Buenos Aires",
+  "provincia": "Ciudad Autonoma de Buenos Aires",
   "localidad_raw": "Capital Federal",
   "localidad": "Capital Federal",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.522,
-  "lat": -36.674463782537195,
-  "lng": -60.5581519606063
+  "departamento": "CABA",
+  "match_quality": "caba",
+  "match_ratio": 1.0,
+  "lat": -34.6037,
+  "lng": -58.3816
  },
  {
   "nombre": "Luciano",
@@ -1558,14 +1558,14 @@
   "correo": "pineronicolas72@gmail.com",
   "instagram": "Nico_pinero",
   "provincia_raw": "Buenos Aires",
-  "provincia": "Buenos Aires",
+  "provincia": "Ciudad Autonoma de Buenos Aires",
   "localidad_raw": "Capital Federal",
   "localidad": "Capital Federal",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.522,
-  "lat": -36.674463782537195,
-  "lng": -60.5581519606063
+  "departamento": "CABA",
+  "match_quality": "caba",
+  "match_ratio": 1.0,
+  "lat": -34.6037,
+  "lng": -58.3816
  },
  {
   "nombre": "Ricardo Ezequiel",
@@ -1641,11 +1641,11 @@
   "provincia": "Chaco",
   "localidad_raw": "Isla del Cerrito",
   "localidad": "Isla del Cerrito",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.462,
-  "lat": -26.38355239523516,
-  "lng": -60.76584678632013
+  "departamento": "Bermejo",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -26.959493330868185,
+  "lng": -58.710169729447095
  },
  {
   "nombre": "Edgardo",
@@ -1689,11 +1689,11 @@
   "provincia": "Chubut",
   "localidad_raw": "Villa lago Rivadavia",
   "localidad": "Villa lago Rivadavia",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.353,
-  "lat": -43.7892680680225,
-  "lng": -68.52704637001685
+  "departamento": "Futaleufu",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -43.0700674781474,
+  "lng": -71.45609826698282
  },
  {
   "nombre": "Jeremias",
@@ -1705,11 +1705,11 @@
   "provincia": "Chubut",
   "localidad_raw": "Corcovado",
   "localidad": "Corcovado",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.357,
-  "lat": -43.7892680680225,
-  "lng": -68.52704637001685
+  "departamento": "Tehuelches",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -44.19881901662163,
+  "lng": -70.57661798393723
  },
  {
   "nombre": "Santiago",
@@ -1721,11 +1721,11 @@
   "provincia": "Chubut",
   "localidad_raw": "Trevelin",
   "localidad": "Trevelin",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.571,
-  "lat": -43.7892680680225,
-  "lng": -68.52704637001685
+  "departamento": "Futaleufu",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -43.0700674781474,
+  "lng": -71.45609826698282
  },
  {
   "nombre": "German",
@@ -1753,11 +1753,11 @@
   "provincia": "Cordoba",
   "localidad_raw": "Potrero de garay lago los molinos",
   "localidad": "Potrero de garay lago los molinos",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.383,
-  "lat": -32.14213588611025,
-  "lng": -63.79935515743252
+  "departamento": "Calamuchita",
+  "match_quality": "dept",
+  "match_ratio": 0.98,
+  "lat": -32.20815604371388,
+  "lng": -64.6076592426947
  },
  {
   "nombre": "German",
@@ -1881,11 +1881,11 @@
   "provincia": "Cordoba",
   "localidad_raw": "Almafuerte",
   "localidad": "Almafuerte",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.476,
-  "lat": -32.14213588611025,
-  "lng": -63.79935515743252
+  "departamento": "Tercero Arriba",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -32.2943044643272,
+  "lng": -63.775637756623155
  },
  {
   "nombre": "Diego Luján",
@@ -1897,11 +1897,11 @@
   "provincia": "Cordoba",
   "localidad_raw": "Serrano",
   "localidad": "Serrano",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.5,
-  "lat": -32.14213588611025,
-  "lng": -63.79935515743252
+  "departamento": "Presidente Roque Saenz Peña",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -34.13943378821929,
+  "lng": -63.42239439558458
  },
  {
   "nombre": "Eduardo",
@@ -1913,11 +1913,11 @@
   "provincia": "Cordoba",
   "localidad_raw": "Lago San Roque. Villa Carlos Paz",
   "localidad": "Lago San Roque",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.48,
-  "lat": -32.14213588611025,
-  "lng": -63.79935515743252
+  "departamento": "Punilla",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -31.22288830100386,
+  "lng": -64.59095684551927
  },
  {
   "nombre": "Mateo",
@@ -2121,11 +2121,11 @@
   "provincia": "Corrientes",
   "localidad_raw": "Yapeyú (Corrientes)",
   "localidad": "Yapeyú",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.4,
-  "lat": -28.780589857288586,
-  "lng": -57.80471002562856
+  "departamento": "San Martin",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -28.7734128290279,
+  "lng": -56.889577775756436
  },
  {
   "nombre": "Oscar Gabriel",
@@ -2185,11 +2185,11 @@
   "provincia": "Corrientes",
   "localidad_raw": "Isla apipe grande",
   "localidad": "Isla apipe grande",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.385,
-  "lat": -28.780589857288586,
-  "lng": -57.80471002562856
+  "departamento": "Ituzaingo",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -27.90800752750938,
+  "lng": -56.788848063955065
  },
  {
   "nombre": "Juan Gabriel",
@@ -2281,11 +2281,11 @@
   "provincia": "Corrientes",
   "localidad_raw": "Portal Carambola- Esteros del Iberá",
   "localidad": "Portal Carambola- Esteros del Iberá",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.417,
-  "lat": -28.780589857288586,
-  "lng": -57.80471002562856
+  "departamento": "Mercedes",
+  "match_quality": "dept",
+  "match_ratio": 0.98,
+  "lat": -29.044529238554315,
+  "lng": -57.7827602472422
  },
  {
   "nombre": "Federico Martin",
@@ -2585,11 +2585,11 @@
   "provincia": "Corrientes",
   "localidad_raw": "Mocoreta",
   "localidad": "Mocoreta",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.4,
-  "lat": -28.780589857288586,
-  "lng": -57.80471002562856
+  "departamento": "Monte Caseros",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -30.220871271808473,
+  "lng": -57.83885193410293
  },
  {
   "nombre": "Cesar Andres",
@@ -3609,11 +3609,11 @@
   "provincia": "Entre Rios",
   "localidad_raw": "VILLA URQUIZA",
   "localidad": "VILLA URQUIZA",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.636,
-  "lat": -32.059583545735315,
-  "lng": -59.20194596889309
+  "departamento": "Parana",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -31.689648067921226,
+  "lng": -60.050242684983104
  },
  {
   "nombre": "Alan",
@@ -3913,11 +3913,11 @@
   "provincia": "Entre Rios",
   "localidad_raw": "Villa Urquiza",
   "localidad": "Villa Urquiza",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.636,
-  "lat": -32.059583545735315,
-  "lng": -59.20194596889309
+  "departamento": "Parana",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -31.689648067921226,
+  "lng": -60.050242684983104
  },
  {
   "nombre": "Jonathan Daniel",
@@ -3929,11 +3929,11 @@
   "provincia": "Misiones",
   "localidad_raw": "Panambi, 9 de julio, (Rio uruguay)",
   "localidad": "Panambi",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.471,
-  "lat": -26.873428557960604,
-  "lng": -54.649342017979016
+  "departamento": "Obera",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -27.471257988421165,
+  "lng": -55.07038864432631
  },
  {
   "nombre": "Luis Orlando",
@@ -3977,11 +3977,11 @@
   "provincia": "Neuquen",
   "localidad_raw": "Quillen",
   "localidad": "Quillen",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.571,
-  "lat": -38.642356840179275,
-  "lng": -70.11790793578439
+  "departamento": "Alumine",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -39.13159608781883,
+  "lng": -71.0465767271028
  },
  {
   "nombre": "Elias",
@@ -4105,11 +4105,11 @@
   "provincia": "Rio Negro",
   "localidad_raw": "Villa Regina",
   "localidad": "Villa Regina",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.545,
-  "lat": -40.40502321391336,
-  "lng": -67.22864669166414
+  "departamento": "General Roca",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -38.53166340469534,
+  "lng": -67.55502565804623
  },
  {
   "nombre": "Wolfgang",
@@ -4297,11 +4297,11 @@
   "provincia": "Salta",
   "localidad_raw": "Juaquin.V.Gonzales",
   "localidad": "Juaquin",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.429,
-  "lat": -24.301267893014142,
-  "lng": -64.81517217990113
+  "departamento": "Anta",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -24.865376282254342,
+  "lng": -63.83821111733402
  },
  {
   "nombre": "Agustín",
@@ -4361,11 +4361,11 @@
   "provincia": "Santa Cruz",
   "localidad_raw": "El chalten",
   "localidad": "El chalten",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.421,
-  "lat": -48.814906040717574,
-  "lng": -69.9557061512575
+  "departamento": "Lago Argentino",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -49.836244249051866,
+  "lng": -72.06528590199619
  },
  {
   "nombre": "David",
@@ -4377,11 +4377,11 @@
   "provincia": "Santa Cruz",
   "localidad_raw": "Gobernador gregores- lago strobel",
   "localidad": "Gobernador gregores- lago strobel",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.32,
-  "lat": -48.814906040717574,
-  "lng": -69.9557061512575
+  "departamento": "Rio Chico",
+  "match_quality": "dept",
+  "match_ratio": 0.98,
+  "lat": -48.28697305258469,
+  "lng": -71.11357755383794
  },
  {
   "nombre": "Cristian",
@@ -4409,11 +4409,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Alejandra",
   "localidad": "Alejandra",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.462,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "San Javier",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -30.1074161646221,
+  "lng": -59.898068805343094
  },
  {
   "nombre": "Joaquin",
@@ -4425,11 +4425,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Arocena",
   "localidad": "Arocena",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.5,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "San Jeronimo",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -32.156638284590876,
+  "lng": -61.04732742946806
  },
  {
   "nombre": "Leandro",
@@ -4441,11 +4441,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Arroyo leyes",
   "localidad": "Arroyo leyes",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.421,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "Garay",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -31.057224538213692,
+  "lng": -60.126969996816335
  },
  {
   "nombre": "David",
@@ -4457,11 +4457,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Coronda y Arocena",
   "localidad": "Coronda",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.571,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "San Jeronimo",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -32.156638284590876,
+  "lng": -61.04732742946806
  },
  {
   "nombre": "Daniel Alejandro",
@@ -4473,11 +4473,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Fray Luis Beltrán",
   "localidad": "Fray Luis Beltrán",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.48,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "San Lorenzo",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -32.94575422039776,
+  "lng": -60.961449130264775
  },
  {
   "nombre": "Juan cruz",
@@ -4505,11 +4505,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Fighiera",
   "localidad": "Fighiera",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.5,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "Rosario",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -33.12925301898071,
+  "lng": -60.70978812948959
  },
  {
   "nombre": "Diego",
@@ -4521,11 +4521,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Desvío Arijon",
   "localidad": "Desvío Arijon",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.522,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "La Capital",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -31.477697559684888,
+  "lng": -60.66954911690828
  },
  {
   "nombre": "Alexis",
@@ -4537,11 +4537,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Sauce viejo",
   "localidad": "Sauce viejo",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.571,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "La Capital",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -31.477697559684888,
+  "lng": -60.66954911690828
  },
  {
   "nombre": "Milton Alexis",
@@ -4553,11 +4553,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Pueblo Esther",
   "localidad": "Pueblo Esther",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.308,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "Rosario",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -33.12925301898071,
+  "lng": -60.70978812948959
  },
  {
   "nombre": "Waldo Nahuel",
@@ -4569,11 +4569,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "El Rabon",
   "localidad": "El Rabon",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.625,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "General Obligado",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -28.673024629487283,
+  "lng": -59.52685868049924
  },
  {
   "nombre": "Mario",
@@ -4601,11 +4601,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Sauce Viejo",
   "localidad": "Sauce Viejo",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.571,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "La Capital",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -31.477697559684888,
+  "lng": -60.66954911690828
  },
  {
   "nombre": "Carlos Andres",
@@ -4633,11 +4633,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Saladero Mariano Cabal , dpto Garay",
   "localidad": "Saladero Mariano Cabal",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.514,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "Garay",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -31.057224538213692,
+  "lng": -60.126969996816335
  },
  {
   "nombre": "Andres",
@@ -4681,11 +4681,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Arroyo leyes",
   "localidad": "Arroyo leyes",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.421,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "Garay",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -31.057224538213692,
+  "lng": -60.126969996816335
  },
  {
   "nombre": "Diego",
@@ -4729,11 +4729,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Arroyo seco",
   "localidad": "Arroyo seco",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.444,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "Rosario",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -33.12925301898071,
+  "lng": -60.70978812948959
  },
  {
   "nombre": "Leonel",
@@ -4745,11 +4745,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Sauce viejo - Santa Fe",
   "localidad": "Sauce viejo",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.571,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "La Capital",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -31.477697559684888,
+  "lng": -60.66954911690828
  },
  {
   "nombre": "David",
@@ -4777,11 +4777,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Puerto Gaboto",
   "localidad": "Puerto Gaboto",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.414,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "San Jeronimo",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -32.156638284590876,
+  "lng": -61.04732742946806
  },
  {
   "nombre": "Pablo",
@@ -4809,11 +4809,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Florencia",
   "localidad": "Florencia",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.5,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "General Obligado",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -28.673024629487283,
+  "lng": -59.52685868049924
  },
  {
   "nombre": "Angel",
@@ -4841,11 +4841,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Santa Rosa de Calchines",
   "localidad": "Santa Rosa de Calchines",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.4,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "Garay",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -31.057224538213692,
+  "lng": -60.126969996816335
  },
  {
   "nombre": "David",
@@ -4857,11 +4857,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Coronda",
   "localidad": "Coronda",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.571,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "San Jeronimo",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -32.156638284590876,
+  "lng": -61.04732742946806
  },
  {
   "nombre": "Ruben Jorge Eduardo",
@@ -4921,11 +4921,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Arocena",
   "localidad": "Arocena",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.5,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "San Jeronimo",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -32.156638284590876,
+  "lng": -61.04732742946806
  },
  {
   "nombre": "VIVIANA",
@@ -4969,11 +4969,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Puerto Aragón",
   "localidad": "Puerto Aragón",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.5,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "La Capital",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -31.477697559684888,
+  "lng": -60.66954911690828
  },
  {
   "nombre": "Ruben Ricardo",
@@ -5081,11 +5081,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Desvió arijon , barrio rio grande",
   "localidad": "Desvió arijon",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.522,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "La Capital",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -31.477697559684888,
+  "lng": -60.66954911690828
  },
  {
   "nombre": "MATIAS",
@@ -5097,11 +5097,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Puerto Gaboto",
   "localidad": "Puerto Gaboto",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.414,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "San Jeronimo",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -32.156638284590876,
+  "lng": -61.04732742946806
  },
  {
   "nombre": "Yael",
@@ -5113,11 +5113,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Alejandra",
   "localidad": "Alejandra",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.462,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "San Javier",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -30.1074161646221,
+  "lng": -59.898068805343094
  },
  {
   "nombre": "JORGE ALBERTO",
@@ -5145,11 +5145,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Santa Rosa de calchines",
   "localidad": "Santa Rosa de calchines",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.4,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "Garay",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -31.057224538213692,
+  "lng": -60.126969996816335
  },
  {
   "nombre": "Uriel",
@@ -5161,11 +5161,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "San Genaro",
   "localidad": "San Genaro",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.667,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "San Martin",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -32.01461155478365,
+  "lng": -61.80790306468118
  },
  {
   "nombre": "Cesar ivan",
@@ -5177,11 +5177,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Florencia",
   "localidad": "Florencia",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.5,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "General Obligado",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -28.673024629487283,
+  "lng": -59.52685868049924
  },
  {
   "nombre": "Franco",
@@ -5209,11 +5209,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Cayastá",
   "localidad": "Cayastá",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.556,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "Garay",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -31.057224538213692,
+  "lng": -60.126969996816335
  },
  {
   "nombre": "Ariel Alejandro",
@@ -5241,11 +5241,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Arroyo Leyes",
   "localidad": "Arroyo Leyes",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.421,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "Garay",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -31.057224538213692,
+  "lng": -60.126969996816335
  },
  {
   "nombre": "Miguel dario",
@@ -5257,11 +5257,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Arocena  gaboto  y itati",
   "localidad": "Arocena gaboto",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.467,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "San Jeronimo",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -32.156638284590876,
+  "lng": -61.04732742946806
  },
  {
   "nombre": "Alejandro",
@@ -5289,11 +5289,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Puerto Gaboto",
   "localidad": "Puerto Gaboto",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.414,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "San Jeronimo",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -32.156638284590876,
+  "lng": -61.04732742946806
  },
  {
   "nombre": "Darío",
@@ -5305,11 +5305,11 @@
   "provincia": "Santa Fe",
   "localidad_raw": "Arroyo Seco",
   "localidad": "Arroyo Seco",
-  "departamento": null,
-  "match_quality": "prov",
-  "match_ratio": 0.444,
-  "lat": -30.706008124316146,
-  "lng": -60.947234536328445
+  "departamento": "Rosario",
+  "match_quality": "dept",
+  "match_ratio": 1.0,
+  "lat": -33.12925301898071,
+  "lng": -60.70978812948959
  },
  {
   "nombre": "Leonardo martin",

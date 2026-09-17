@@ -120,7 +120,7 @@ CITY_TO_DEPT = {
     "buenos aires": {
         "mar del plata": "General Pueyrredon",
         "miramar": "General Alvarado",
-        "punta alta": "Coronel Rosales",
+        "punta alta": "Coronel De Marina Leonardo Rosales",
         "santa teresita": "La Costa",
         "mar de ajo": "La Costa",
         "mar de ajo norte": "La Costa",
@@ -192,6 +192,13 @@ CITY_TO_DEPT = {
         "curuzu cuatia": "Curuzu Cuatia",
         "monte caseros": "Monte Caseros",
         "paso de los libres": "Paso De Los Libres",
+        "yapeyu": "San Martin",
+        "isla apipe": "Ituzaingo",
+        "isla apipe grande": "Ituzaingo",
+        "mocoreta": "Monte Caseros",
+        "esteros del ibera": "Mercedes",
+        "portal carambola": "Mercedes",
+        "colonia carlos pellegrini": "San Martin",
     },
     "entre rios": {
         "parana": "Parana",
@@ -205,6 +212,7 @@ CITY_TO_DEPT = {
         "federal": "Federal",
         "concepcion del uruguay": "Uruguay",
         "villa paranacito": "Islas Del Ibicuy",
+        "villa urquiza": "Parana",
     },
     "santa fe": {
         "rosario": "Rosario",
@@ -216,6 +224,27 @@ CITY_TO_DEPT = {
         "san lorenzo": "San Lorenzo",
         "sunchales": "Castellanos",
         "esperanza": "Las Colonias",
+        # Pueblos chicos con nombre distinto al depto
+        "arroyo leyes": "Garay",
+        "sauce viejo": "La Capital",
+        "puerto gaboto": "San Jeronimo",
+        "alejandra": "San Javier",
+        "arocena": "San Jeronimo",
+        "arocena gaboto": "San Jeronimo",
+        "coronda": "San Jeronimo",
+        "arroyo seco": "Rosario",
+        "florencia": "General Obligado",
+        "santa rosa de calchines": "Garay",
+        "fray luis beltran": "San Lorenzo",
+        "fighiera": "Rosario",
+        "desvio arijon": "La Capital",
+        "desvi arijon": "La Capital",
+        "pueblo esther": "Rosario",
+        "el rabon": "General Obligado",
+        "saladero mariano cabal": "Garay",
+        "puerto aragon": "La Capital",
+        "san genaro": "San Martin",
+        "cayasta": "Garay",
     },
     "cordoba": {
         "cordoba": "Capital",
@@ -226,6 +255,12 @@ CITY_TO_DEPT = {
         "alta gracia": "Santa Maria",
         "jesus maria": "Colon",
         "san francisco": "San Justo",
+        "almafuerte": "Tercero Arriba",
+        "potrero de garay": "Calamuchita",
+        "lago san roque": "Punilla",
+        "serrano": "Presidente Roque Saenz Pena",
+        "embalse": "Calamuchita",
+        "villa general belgrano": "Calamuchita",
     },
     "salta": {
         "salta": "Capital",
@@ -234,6 +269,7 @@ CITY_TO_DEPT = {
         "las lajitas": "Anta",
         "el tunal": "Anta",
         "tunal": "Anta",
+        "juaquin": "Anta",
     },
     "tierra del fuego": {
         "ushuaia": "Ushuaia",
@@ -244,6 +280,9 @@ CITY_TO_DEPT = {
         "san martin de los andes": "Lacar",
         "villa la angostura": "Los Lagos",
         "junin de los andes": "Huiliches",
+        "quillen": "Alumine",
+        "lago quillen": "Alumine",
+        "alumine": "Alumine",
     },
     "rio negro": {
         "bariloche": "Bariloche",
@@ -251,6 +290,7 @@ CITY_TO_DEPT = {
         "viedma": "Adolfo Alsina",
         "cipolletti": "General Roca",
         "general roca": "General Roca",
+        "villa regina": "General Roca",
     },
     "santiago del estero": {
         "santiago del estero": "Capital",
@@ -266,21 +306,32 @@ CITY_TO_DEPT = {
         "puerto madryn": "Biedma",
         "trelew": "Rawson",
         "esquel": "Futaleufu",
+        "trevelin": "Futaleufu",
+        "corcovado": "Tehuelches",
+        "villa lago rivadavia": "Futaleufu",
+        "el hoyo": "Cushamen",
+        "lago puelo": "Cushamen",
+        "el bolson": "Cushamen",
     },
     "santa cruz": {
         "rio gallegos": "Guer Aike",
         "el calafate": "Lago Argentino",
         "puerto deseado": "Deseado",
+        "el chalten": "Lago Argentino",
+        "gobernador gregores": "Rio Chico",
+        "lago strobel": "Rio Chico",
     },
     "misiones": {
         "posadas": "Capital",
         "obera": "Obera",
         "eldorado": "Eldorado",
         "puerto iguazu": "Iguazu",
+        "panambi": "Obera",
     },
     "chaco": {
         "resistencia": "San Fernando",
         "saenz pena": "Comandante Fernandez",
+        "isla del cerrito": "Bermejo",
     },
     "san juan": {
         "san juan": "Capital",
@@ -360,8 +411,10 @@ def main():
         loc_first = first_locality(loc_raw)
         loc_norm  = norm(loc_first)
 
-        # CABA special-case (no polygon in geo.json)
-        if norm(prov_clean).startswith("ciudad autonoma") or loc_norm in ("caba", "ciudad autonoma de buenos aires"):
+        # CABA special-case (no polygon in geo.json). También si la localidad dice CABA aunque
+        # la provincia venga como "Buenos Aires" (patrón común en el Excel).
+        loc_says_caba = loc_norm in ("caba", "ciudad autonoma de buenos aires", "capital federal", "ciudad de buenos aires")
+        if norm(prov_clean).startswith("ciudad autonoma") or loc_says_caba:
             lat, lng = CABA_LATLNG
             dept_name, ratio, quality = "CABA", 1.0, "caba"
             prov_display = "Ciudad Autonoma de Buenos Aires"
