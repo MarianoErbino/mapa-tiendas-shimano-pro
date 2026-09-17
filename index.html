@@ -76,14 +76,6 @@
   .store-item .name { font-weight: 600; color: var(--text); }
   .store-item .loc  { color: var(--muted); font-size: 11px; }
   .store-item .contact { margin-top: 2px; color: #444; font-size: 11px; }
-  .store-item .qbadge {
-    display: inline-block; padding: 1px 5px; margin-left: 4px;
-    font-size: 9px; border-radius: 3px; vertical-align: middle;
-  }
-  .qbadge.dept { background: #dff5e1; color: #1b6e1f; }
-  .qbadge.prov { background: #fff2cd; color: #7a5c00; }
-  .qbadge.caba { background: #dfe8ff; color: #0033a0; }
-
   .leaflet-popup-content-wrapper { border-radius: 6px; }
   .leaflet-popup-content { font-family: "Segoe UI", Arial, sans-serif; font-size: 12px; margin: 10px 12px; min-width: 210px; }
   .popup h3 { margin: 0 0 4px; font-size: 13px; color: var(--brand); }
@@ -319,13 +311,7 @@ function buildStoreItem(s, idx, marker) {
   const item = el('div', 'store-item');
   item.dataset.idx = idx;
 
-  const nameDiv = el('div', 'name');
-  nameDiv.appendChild(document.createTextNode(fullName(s)));
-  const badgeCls = 'qbadge ' + s.match_quality;
-  const badgeLbl = s.match_quality === 'dept' ? 'depto'
-                  : s.match_quality === 'caba' ? 'CABA' : 'aprox';
-  nameDiv.appendChild(el('span', badgeCls, badgeLbl));
-  item.appendChild(nameDiv);
+  item.appendChild(el('div', 'name', fullName(s)));
 
   const locStr = [s.localidad, s.provincia].filter(Boolean).join(' - ');
   if (locStr) item.appendChild(el('div', 'loc', locStr));
