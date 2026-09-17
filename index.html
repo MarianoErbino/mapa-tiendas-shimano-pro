@@ -132,7 +132,9 @@
 
 <script>
 /* ---------- Config mapa Argentina ---------- */
-const MAP_BOUNDS = [[-22, -76], [-56, -52]];
+/* Bound norte a -20 (no -22) para dejar margen de auto-pan en tiendas del extremo norte
+   como Embarcacion (Salta, lat -22.71) — sin este margen el popup queda cortado arriba. */
+const MAP_BOUNDS = [[-20, -76], [-56, -52]];
 const MAP_CENTER = [-38, -64];
 const MAP_ZOOM   = 5;
 
@@ -353,7 +355,12 @@ function renderList() {
     const [lat, lng] = jitter(s.lat, s.lng, n);
 
     const marker = L.marker([lat, lng], { title: fullName(s) });
-    marker.bindPopup(() => buildPopupNode(s));
+    marker.bindPopup(() => buildPopupNode(s), {
+      autoPan: true,
+      keepInView: true,
+      autoPanPaddingTopLeft: L.point(20, 120),
+      autoPanPaddingBottomRight: L.point(20, 20),
+    });
     cluster.addLayer(marker);
 
     list.appendChild(buildStoreItem(s, i, marker));
